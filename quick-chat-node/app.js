@@ -3,8 +3,16 @@ var app = require('express')();
 const path = require('path')
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+const cors = require('cors');
 
 var allUsers = [];
+const corsOptions = {
+    origin: '*', 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,  
+};
+
+app.use(cors(corsOptions));
 
 
 
@@ -61,5 +69,5 @@ io.on('connection', function (socket) {
 const PORT = 8080;
 
 server.listen(PORT,'0.0.0.0',()=>{
-    console.log('Server up and running at',PORT);
+    console.log(`Server up and running at http://localhost:${PORT}`);
 });
