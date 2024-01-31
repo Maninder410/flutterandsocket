@@ -7,11 +7,11 @@ var io = require('socket.io')(server);
 var allUsers = [];
 
 
-//static folder
+
 app.get("/",(req,res)=>{
     res.send("<h1> Server is working <h1/>");
 })
-// app.use(express.static(path.join(__dirname,'web')));
+app.use(express.static(path.join(__dirname,'web')));
 
 function emitUsers() {
     io.emit('users',allUsers);    
