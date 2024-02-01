@@ -3,16 +3,10 @@ var app = require('express')();
 const path = require('path')
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-const cors = require('cors');
+
 
 var allUsers = [];
-const corsOptions = {
-    origin: '*', 
-    credentials: true,  
-    methods: ['GET','POST','PUT','DELETE'],
-};
 
-app.use(cors(corsOptions));
 
 
 

@@ -3,6 +3,7 @@ import 'package:quick_chat_app/utils/constants.dart';
 import 'package:quick_chat_app/views/setup/setup_page.dart';
 
 void main() {
+  debugProfileBuildsEnabled = true;
   runApp(const QuickChatApp());
 }
 
