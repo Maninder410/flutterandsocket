@@ -8,8 +8,8 @@ const cors = require('cors');
 var allUsers = [];
 const corsOptions = {
     origin: '*', 
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,  
+    methods: ['GET','POST','PUT','DELETE'],
 };
 
 app.use(cors(corsOptions));
